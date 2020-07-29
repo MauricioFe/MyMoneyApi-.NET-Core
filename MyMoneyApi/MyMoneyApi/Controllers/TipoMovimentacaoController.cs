@@ -51,7 +51,7 @@ namespace MyMoneyApi.Controllers
 
         // PUT api/<TipoMovimentacaoController>/5
         [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromBody]TipoMovimentacao tipoMovimentacao)
+        public IActionResult Update(int id, [FromBody] TipoMovimentacao tipoMovimentacao)
         {
             if (tipoMovimentacao == null || id != tipoMovimentacao.Id)
             {
@@ -68,8 +68,14 @@ namespace MyMoneyApi.Controllers
 
         // DELETE api/<TipoMovimentacaoController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var tipoMovimentacao = _repo.Find(id);
+            if (tipoMovimentacao == null)
+                return NotFound();
+
+            _repo.Remove(id);
+            return new NoContentResult();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace MyMoneyApi.Models
     {
         public MyMoneyDBContext(DbContextOptions<MyMoneyDBContext> options) : base(options) { }
 
-        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Categoria> Categoria { get; set; }
         public DbSet<TipoMovimentacao> TipoMovimentacao { get; set; }
         public DbSet<Repeticao> Repeticao { get; set; }
         public DbSet<ResetSenha> ResetSenha { get; set; }

@@ -16,30 +16,30 @@ namespace MyMoneyApi.Repositorio.ClasseRepo
         }
         public void Add(Categoria categoria)
         {
-            _context.Categorias.Add(categoria);
+            _context.Categoria.Add(categoria);
             _context.SaveChanges();
         }
 
         public Categoria Find(long id)
         {
-            return _context.Categorias.FirstOrDefault(c => c.Id == id);
+            return _context.Categoria.FirstOrDefault(c => c.Id == id);
         }
 
         public IEnumerable<Categoria> GetAll()
         {
-            return _context.Categorias.ToList();
+            return _context.Categoria.ToList();
         }
 
         public void Remove(long id)
         {
             var categoria = Find(id);
-            _context.Categorias.Remove(categoria);
+            _context.Categoria.Remove(categoria);
             _context.SaveChanges();
         }
 
         public void Update(Categoria categoria)
         {
-            _context.Categorias.Update(categoria);
+            _context.Categoria.Update(categoria);
             _context.SaveChanges();
         }
     }

@@ -68,8 +68,14 @@ namespace MyMoneyApi.Controllers
 
         // DELETE api/<ResetSenhaController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var resetSenha = _repo.Find(id);
+            if (resetSenha == null)
+                return NotFound();
+
+            _repo.Remove(id);
+            return new NoContentResult();
         }
     }
 }

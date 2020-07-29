@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MyMoneyApi.Models;
+using MyMoneyApi.Repositorio;
+using MyMoneyApi.Repositorio.ClasseRepo;
 
 namespace MyMoneyApi
 {
@@ -28,6 +30,12 @@ namespace MyMoneyApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<MyMoneyDBContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("conn")));
+            services.AddTransient<ICategoriaRepositorio, CategoriaRepositorio>();
+            services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
+            services.AddTransient<IMovimentacaoRepositorio, MovimentacaoRepositorio>();
+            services.AddTransient<ITipoMovimentacaoRepositorio, TipoMovimentacaoRepositorio>();
+            services.AddTransient<IRepeticaoRepositorio, RepeticaoRepositorio>();
+            services.AddTransient<IResetSenhaRepositorio, ResetSenhaRepositorio>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

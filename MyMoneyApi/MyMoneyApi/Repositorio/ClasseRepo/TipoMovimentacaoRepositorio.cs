@@ -17,7 +17,7 @@ namespace MyMoneyApi.Repositorio.ClasseRepo
         public void Add(TipoMovimentacao tipoTipoMovimentacao)
         {
             _context.TipoMovimentacao.Add(tipoTipoMovimentacao);
-            _context.SaveChanges();
+           _context.SaveChanges();
         }
 
         public TipoMovimentacao Find(long id)

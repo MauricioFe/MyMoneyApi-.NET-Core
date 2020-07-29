@@ -74,8 +74,14 @@ namespace MyMoneyApi.Controllers
 
         // DELETE api/<MovimentacoesController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var movimentacao = _repo.Find(id);
+            if (movimentacao == null)
+                return NotFound();
+
+            _repo.Remove(id);
+            return new NoContentResult();
         }
     }
 }

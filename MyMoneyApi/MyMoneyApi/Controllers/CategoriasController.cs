@@ -40,7 +40,6 @@ namespace MyMoneyApi.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] Categoria categoria)
         {
-
             if (categoria == null)
             {
                 return BadRequest();
@@ -53,10 +52,6 @@ namespace MyMoneyApi.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody] Categoria categoria)
         {
-            if (categoria == null || id != categoria.Id)
-            {
-                return BadRequest();
-            }
             var _categoria = _repo.Find(id);
             if (_categoria == null)
                 return NotFound();

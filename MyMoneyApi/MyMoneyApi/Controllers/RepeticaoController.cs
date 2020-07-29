@@ -71,8 +71,13 @@ namespace MyMoneyApi.Controllers
 
         // DELETE api/<RepeticaoController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var repeticao = _repo.Find(id);
+            if (repeticao == null)
+                return NotFound();
+            _repo.Remove(id);
+            return new NoContentResult();
         }
     }
 }
