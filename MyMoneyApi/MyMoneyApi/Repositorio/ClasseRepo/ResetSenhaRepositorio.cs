@@ -8,29 +8,40 @@ namespace MyMoneyApi.Repositorio.ClasseRepo
 {
     public class ResetSenhaRepositorio : IResetSenhaRepositorio
     {
+        private readonly MyMoneyDBContext _context;
+
+        public ResetSenhaRepositorio(MyMoneyDBContext context)
+        {
+            _context = context;
+        }
         public void Add(ResetSenha resetSenha)
         {
-            throw new NotImplementedException();
+            _context.ResetSenha.Add(resetSenha);
+            _context.SaveChanges();
         }
 
         public ResetSenha Find(long id)
         {
-            throw new NotImplementedException();
+            return _context.ResetSenha.FirstOrDefault(c => c.Id == id);
         }
 
         public IEnumerable<ResetSenha> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.ResetSenha.ToList();
         }
 
         public void Remove(long id)
         {
-            throw new NotImplementedException();
+            var resetSenha = Find(id);
+            _context.ResetSenha.Remove(resetSenha);
+            _context.SaveChanges();
         }
 
         public void Update(ResetSenha resetSenha)
         {
-            throw new NotImplementedException();
+            _context.ResetSenha.Update(resetSenha);
+            _context.SaveChanges();
         }
+
     }
 }

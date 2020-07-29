@@ -8,29 +8,39 @@ namespace MyMoneyApi.Repositorio.ClasseRepo
 {
     public class UsuarioRepositorio : IUsuarioRepositorio
     {
+        private readonly MyMoneyDBContext _context;
+
+        public UsuarioRepositorio(MyMoneyDBContext context)
+        {
+            _context = context;
+        }
         public void Add(Usuario usuario)
         {
-            throw new NotImplementedException();
+            _context.Usuario.Add(usuario);
+            _context.SaveChanges();
         }
 
         public Usuario Find(long id)
         {
-            throw new NotImplementedException();
+            return _context.Usuario.FirstOrDefault(c => c.Id == id);
         }
 
         public IEnumerable<Usuario> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Usuario.ToList();
         }
 
         public void Remove(long id)
         {
-            throw new NotImplementedException();
+            var usuario = Find(id);
+            _context.Usuario.Remove(usuario);
+            _context.SaveChanges();
         }
 
         public void Update(Usuario usuario)
         {
-            throw new NotImplementedException();
+            _context.Usuario.Update(usuario);
+            _context.SaveChanges();
         }
     }
 }

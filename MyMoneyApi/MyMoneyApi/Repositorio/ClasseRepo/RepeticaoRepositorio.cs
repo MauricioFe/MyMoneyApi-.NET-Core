@@ -8,29 +8,40 @@ namespace MyMoneyApi.Repositorio.ClasseRepo
 {
     public class RepeticaoRepositorio : IRepeticaoRepositorio
     {
+        private readonly MyMoneyDBContext _context;
+
+        public RepeticaoRepositorio(MyMoneyDBContext context)
+        {
+            _context = context;
+        }
         public void Add(Repeticao repeticao)
         {
-            throw new NotImplementedException();
+            _context.Repeticao.Add(repeticao);
+            _context.SaveChanges();
         }
 
         public Repeticao Find(long id)
         {
-            throw new NotImplementedException();
+            return _context.Repeticao.FirstOrDefault(c => c.Id == id);
         }
 
         public IEnumerable<Repeticao> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Repeticao.ToList();
         }
 
         public void Remove(long id)
         {
-            throw new NotImplementedException();
+            var repeticao = Find(id);
+            _context.Repeticao.Remove(repeticao);
+            _context.SaveChanges();
         }
 
         public void Update(Repeticao repeticao)
         {
-            throw new NotImplementedException();
+            _context.Repeticao.Update(repeticao);
+            _context.SaveChanges();
         }
+
     }
 }

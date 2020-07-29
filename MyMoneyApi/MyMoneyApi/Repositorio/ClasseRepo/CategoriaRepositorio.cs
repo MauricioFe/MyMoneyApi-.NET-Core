@@ -8,29 +8,39 @@ namespace MyMoneyApi.Repositorio.ClasseRepo
 {
     public class CategoriaRepositorio : ICategoriaRepositorio
     {
+        private readonly MyMoneyDBContext _context;
+
+        public CategoriaRepositorio(MyMoneyDBContext context)
+        {
+            _context = context;
+        }
         public void Add(Categoria categoria)
         {
-            throw new NotImplementedException();
+            _context.Categorias.Add(categoria);
+            _context.SaveChanges();
         }
 
         public Categoria Find(long id)
         {
-            throw new NotImplementedException();
+            return _context.Categorias.FirstOrDefault(c => c.Id == id);
         }
 
         public IEnumerable<Categoria> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Categorias.ToList();
         }
 
         public void Remove(long id)
         {
-            throw new NotImplementedException();
+            var categoria = Find(id);
+            _context.Categorias.Remove(categoria);
+            _context.SaveChanges();
         }
 
         public void Update(Categoria categoria)
         {
-            throw new NotImplementedException();
+            _context.Categorias.Update(categoria);
+            _context.SaveChanges();
         }
     }
 }

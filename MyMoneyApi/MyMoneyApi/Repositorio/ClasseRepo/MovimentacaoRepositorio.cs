@@ -8,29 +8,39 @@ namespace MyMoneyApi.Repositorio.ClasseRepo
 {
     public class MovimentacaoRepositorio : IMovimentacaoRepositorio
     {
+        private readonly MyMoneyDBContext _context;
+
+        public MovimentacaoRepositorio(MyMoneyDBContext context)
+        {
+            _context = context;
+        }
         public void Add(Movimentacao movimentacao)
         {
-            throw new NotImplementedException();
+            _context.Movimentacao.Add(movimentacao);
+            _context.SaveChanges();
         }
 
         public Movimentacao Find(long id)
         {
-            throw new NotImplementedException();
+            return _context.Movimentacao.FirstOrDefault(c => c.Id == id);
         }
 
         public IEnumerable<Movimentacao> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Movimentacao.ToList();
         }
 
         public void Remove(long id)
         {
-            throw new NotImplementedException();
+            var movimentacao = Find(id);
+            _context.Movimentacao.Remove(movimentacao);
+            _context.SaveChanges();
         }
 
         public void Update(Movimentacao movimentacao)
         {
-            throw new NotImplementedException();
+            _context.Movimentacao.Update(movimentacao);
+            _context.SaveChanges();
         }
     }
 }

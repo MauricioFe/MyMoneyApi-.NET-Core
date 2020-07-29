@@ -8,29 +8,39 @@ namespace MyMoneyApi.Repositorio.ClasseRepo
 {
     public class TipoMovimentacaoRepositorio : ITipoMovimentacaoRepositorio
     {
-        public void Add(TipoMovimentacao tipoMovimentacao)
+        private readonly MyMoneyDBContext _context;
+
+        public TipoMovimentacaoRepositorio(MyMoneyDBContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public void Add(TipoMovimentacao tipoTipoMovimentacao)
+        {
+            _context.TipoMovimentacao.Add(tipoTipoMovimentacao);
+            _context.SaveChanges();
         }
 
         public TipoMovimentacao Find(long id)
         {
-            throw new NotImplementedException();
+            return _context.TipoMovimentacao.FirstOrDefault(c => c.Id == id);
         }
 
         public IEnumerable<TipoMovimentacao> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.TipoMovimentacao.ToList();
         }
 
         public void Remove(long id)
         {
-            throw new NotImplementedException();
+            var tipoTipoMovimentacao = Find(id);
+            _context.TipoMovimentacao.Remove(tipoTipoMovimentacao);
+            _context.SaveChanges();
         }
 
-        public void Update(TipoMovimentacao tipoMovimentacao)
+        public void Update(TipoMovimentacao tipoTipoMovimentacao)
         {
-            throw new NotImplementedException();
+            _context.TipoMovimentacao.Update(tipoTipoMovimentacao);
+            _context.SaveChanges();
         }
     }
 }
