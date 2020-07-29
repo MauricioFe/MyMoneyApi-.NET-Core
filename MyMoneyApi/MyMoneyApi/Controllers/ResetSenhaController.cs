@@ -30,38 +30,38 @@ namespace MyMoneyApi.Controllers
         [HttpGet("{id}", Name = "GetResetSenha")]
         public IActionResult GetById(int id)
         {
-            var categoria = _repo.Find(id);
-            if (categoria == null)
+            var resetSenha = _repo.Find(id);
+            if (resetSenha == null)
                 return NotFound();
-            return new ObjectResult(categoria);
+            return new ObjectResult(resetSenha);
         }
 
         // POST api/<ResetSenhaController>
         [HttpPost]
-        public IActionResult Create([FromBody] ResetSenha categoria)
+        public IActionResult Create([FromBody] ResetSenha resetSenha)
         {
 
-            if (categoria == null)
+            if (resetSenha == null)
             {
                 return BadRequest();
             }
-            _repo.Add(categoria);
-            return CreatedAtRoute("GetResetSenha", new { id = categoria.Id }, categoria);
+            _repo.Add(resetSenha);
+            return CreatedAtRoute("GetResetSenha", new { id = resetSenha.Id }, resetSenha);
         }
 
         // PUT api/<ResetSenhaController>/5
         [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromBody]ResetSenha categoria)
+        public IActionResult Update(int id, [FromBody]ResetSenha resetSenha)
         {
-            if (categoria == null || id != categoria.Id)
+            if (resetSenha == null || id != resetSenha.Id)
             {
                 return BadRequest();
             }
-            var _categoria = _repo.Find(id);
-            if (_categoria == null)
+            var _resetSenha = _repo.Find(id);
+            if (_resetSenha == null)
                 return NotFound();
-            _categoria.Descricao = categoria.Descricao;
-            _repo.Update(_categoria);
+            
+            _repo.Update(_resetSenha);
 
             return new NoContentResult();
         }

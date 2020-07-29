@@ -61,6 +61,9 @@ namespace MyMoneyApi.Controllers
             if (_repeticao == null)
                 return NotFound();
             _repeticao.Descricao = repeticao.Descricao;
+            _repeticao.Periodo = repeticao.Periodo;
+            _repeticao.NumOcorrencias= repeticao.NumOcorrencias;
+            _repeticao.NumParcelas = repeticao.NumParcelas;
             _repo.Update(_repeticao);
 
             return new NoContentResult();

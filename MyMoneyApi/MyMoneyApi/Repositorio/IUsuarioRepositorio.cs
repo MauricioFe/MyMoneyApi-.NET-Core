@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyMoneyApi.Repositorio
 {
-    interface IUsuarioRepositorio
+    public interface IUsuarioRepositorio
     {
         IEnumerable<Usuario> GetAll();
         Usuario Find(long id);

@@ -61,6 +61,12 @@ namespace MyMoneyApi.Controllers
             if (_movimentacao == null)
                 return NotFound();
             _movimentacao.Descricao = movimentacao.Descricao;
+            _movimentacao.Valor = movimentacao.Valor;
+            _movimentacao.Observacoes= movimentacao.Descricao;
+            _movimentacao.Repeticao_id = movimentacao.Repeticao_id;
+            _movimentacao.Categoria_id = movimentacao.Categoria_id;
+            _movimentacao.Usuario_id = movimentacao.Usuario_id;
+            _movimentacao.TipoMovimentacao_id = movimentacao.TipoMovimentacao_id;
             _repo.Update(_movimentacao);
 
             return new NoContentResult();

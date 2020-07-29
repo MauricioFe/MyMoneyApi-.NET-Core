@@ -60,7 +60,8 @@ namespace MyMoneyApi.Controllers
             var _usuario = _repo.Find(id);
             if (_usuario == null)
                 return NotFound();
-            _usuario.Descricao = usuario.Descricao;
+            _usuario.Nome = usuario.Nome;
+            _usuario.Email = usuario.Email;
             _repo.Update(_usuario);
 
             return new NoContentResult();
