@@ -67,7 +67,7 @@ namespace MyMoneyApi
                     }
                 };
             });
-
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -82,7 +82,7 @@ namespace MyMoneyApi
             {
                 app.UseHsts();
             }
-
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseMvc();
         }

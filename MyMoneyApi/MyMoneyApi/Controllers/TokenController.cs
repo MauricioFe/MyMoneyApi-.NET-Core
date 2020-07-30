@@ -24,15 +24,14 @@ namespace MyMoneyApi.Controllers
         {
             _config = configuration;
         }
-        [AllowAnonymous]
-        [HttpPost]
-        public IActionResult RequestToken([FromBody] Usuario request)
+       
+        public IActionResult RequestToken(Usuario request)
         {
             if (request.Email == "mauricio.lacerdaml@gmail.com" && request.Senha == "86257765")
             {
                 var claims = new[]
                 {
-                    new Claim(ClaimTypes.Name, request.Nome)
+                    new Claim(ClaimTypes.Name, request.Email)
                 };
 
                 //Recebe uma instancia da classe SymmetricSecuriryKey. Armazenando a chave de criptografia usada na criação do token

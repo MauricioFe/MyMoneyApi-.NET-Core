@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using MyMoneyApi.Models;
 using MyMoneyApi.Repositorio;
+using MyMoneyApi.Services;
 
 namespace MyMoneyApi.Controllers
 {
@@ -13,10 +16,12 @@ namespace MyMoneyApi.Controllers
     public class UsuariosController : Controller
     {
         private readonly IUsuarioRepositorio _repo;
+        private readonly IConfiguration _config;
 
-        public UsuariosController(IUsuarioRepositorio repositorio)
+        public UsuariosController(IUsuarioRepositorio repositorio, IConfiguration configuration)
         {
             _repo = repositorio;
+            _config = configuration;
         }
 
         // GET: api/<UsuariosController>
@@ -38,6 +43,7 @@ namespace MyMoneyApi.Controllers
 
         // POST api/<UsuariosController>
         [HttpPost]
+        [Authorize]
         public IActionResult Create([FromBody] Usuario usuario)
         {
 
@@ -87,7 +93,14 @@ namespace MyMoneyApi.Controllers
             if (_usuario == null)
                 return NotFound();
 
-            return CreatedAtRoute("GetUsuario", new { id = _usuario.Id }, _usuario);
+            TokenServices tokenService = new TokenServices(_config);
+            var token = tokenService.RequestToken(_usuario);
+            _usuario.Senha = "";
+            return Ok(new
+            {
+                bacon = _usuario,
+                milho = token,
+            });
         }
     }
 }
