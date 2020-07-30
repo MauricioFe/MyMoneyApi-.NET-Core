@@ -13,5 +13,6 @@ namespace MyMoneyApi.Repositorio
         void Add(Usuario usuario);
         void Update(Usuario usuario);
         void Remove(long id);
+        Usuario Login(Usuario usuario);
     }
 }

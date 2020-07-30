@@ -78,5 +78,16 @@ namespace MyMoneyApi.Controllers
             _repo.Remove(id);
             return new NoContentResult();
         }
+
+        [HttpPost]
+        [Route("login")]
+        public IActionResult Login([FromBody] Usuario usuario)
+        {
+            var _usuario = _repo.Login(usuario);
+            if (_usuario == null)
+                return NotFound();
+
+            return CreatedAtRoute("GetUsuario", new { id = _usuario.Id }, _usuario);
+        }
     }
 }

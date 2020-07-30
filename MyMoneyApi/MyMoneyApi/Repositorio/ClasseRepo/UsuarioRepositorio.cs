@@ -30,6 +30,11 @@ namespace MyMoneyApi.Repositorio.ClasseRepo
             return _context.Usuario.ToList();
         }
 
+        public Usuario Login(Usuario usuario)
+        {
+            return _context.Usuario.FirstOrDefault(u => u.Email == usuario.Email && u.Senha == usuario.Senha);
+        }
+
         public void Remove(long id)
         {
             var usuario = Find(id);

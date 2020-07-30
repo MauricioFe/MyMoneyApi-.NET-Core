@@ -9,7 +9,6 @@ D:\Treinamento\Android\Api\Projetos\MyMoneyApi-.NET-Core\MyMoneyApi\MyMoneyApi\b
 D:\Treinamento\Android\Api\Projetos\MyMoneyApi-.NET-Core\MyMoneyApi\MyMoneyApi\obj\Debug\netcoreapp2.1\MyMoneyApi.csprojAssemblyReference.cache
 D:\Treinamento\Android\Api\Projetos\MyMoneyApi-.NET-Core\MyMoneyApi\MyMoneyApi\obj\Debug\netcoreapp2.1\MyMoneyApi.AssemblyInfoInputs.cache
 D:\Treinamento\Android\Api\Projetos\MyMoneyApi-.NET-Core\MyMoneyApi\MyMoneyApi\obj\Debug\netcoreapp2.1\MyMoneyApi.AssemblyInfo.cs
-D:\Treinamento\Android\Api\Projetos\MyMoneyApi-.NET-Core\MyMoneyApi\MyMoneyApi\obj\Debug\netcoreapp2.1\MyMoneyApi.csproj.CoreCompileInputs.cache
 D:\Treinamento\Android\Api\Projetos\MyMoneyApi-.NET-Core\MyMoneyApi\MyMoneyApi\obj\Debug\netcoreapp2.1\MyMoneyApi.RazorAssemblyInfo.cache
 D:\Treinamento\Android\Api\Projetos\MyMoneyApi-.NET-Core\MyMoneyApi\MyMoneyApi\obj\Debug\netcoreapp2.1\MyMoneyApi.RazorAssemblyInfo.cs
 D:\Treinamento\Android\Api\Projetos\MyMoneyApi-.NET-Core\MyMoneyApi\MyMoneyApi\obj\Debug\netcoreapp2.1\MyMoneyApi.RazorTargetAssemblyInfo.cache
