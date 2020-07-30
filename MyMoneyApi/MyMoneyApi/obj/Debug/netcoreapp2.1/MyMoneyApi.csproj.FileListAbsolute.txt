@@ -15,3 +15,4 @@ D:\Treinamento\Android\Api\Projetos\MyMoneyApi-.NET-Core\MyMoneyApi\MyMoneyApi\o
 D:\Treinamento\Android\Api\Projetos\MyMoneyApi-.NET-Core\MyMoneyApi\MyMoneyApi\obj\Debug\netcoreapp2.1\MyMoneyApi.dll
 D:\Treinamento\Android\Api\Projetos\MyMoneyApi-.NET-Core\MyMoneyApi\MyMoneyApi\obj\Debug\netcoreapp2.1\MyMoneyApi.pdb
 D:\Treinamento\Android\Api\Projetos\MyMoneyApi-.NET-Core\MyMoneyApi\MyMoneyApi\obj\Debug\netcoreapp2.1\MyMoneyApi.genruntimeconfig.cache
+D:\Treinamento\Android\Api\Projetos\MyMoneyApi-.NET-Core\MyMoneyApi\MyMoneyApi\obj\Debug\netcoreapp2.1\MyMoneyApi.csproj.CoreCompileInputs.cache
