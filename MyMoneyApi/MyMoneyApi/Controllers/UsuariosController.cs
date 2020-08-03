@@ -43,7 +43,6 @@ namespace MyMoneyApi.Controllers
 
         // POST api/<UsuariosController>
         [HttpPost]
-        [Authorize]
         public IActionResult Create([FromBody] Usuario usuario)
         {
 
