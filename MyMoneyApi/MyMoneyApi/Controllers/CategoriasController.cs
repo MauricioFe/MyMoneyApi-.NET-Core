@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyMoneyApi.Models;
 using MyMoneyApi.Repositorio;
@@ -19,8 +20,8 @@ namespace MyMoneyApi.Controllers
             _repo = repositorio;
         }
 
-        // GET: api/<CategoriasController>
         [HttpGet]
+        [Authorize]
         public IEnumerable<Categoria> GetAll()
         {
             return _repo.GetAll();

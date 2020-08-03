@@ -98,8 +98,8 @@ namespace MyMoneyApi.Controllers
             _usuario.Senha = "";
             return Ok(new
             {
-                bacon = _usuario,
-                milho = token,
+                usuario = _usuario,
+                token = token,
             });
         }
     }

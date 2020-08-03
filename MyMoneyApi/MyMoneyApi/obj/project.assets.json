@@ -11431,19 +11431,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mauricio\\.nuget\\packages\\": {}
+    "C:\\Users\\mauri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Treinamento\\Android\\Api\\Projetos\\MyMoneyApi-.NET-Core\\MyMoneyApi\\MyMoneyApi\\MyMoneyApi.csproj",
+      "projectUniqueName": "C:\\Users\\mauri\\Estudos\\Treinamento\\Android\\Api\\Projetos\\MyMoneyApi-.NET-Core\\MyMoneyApi\\MyMoneyApi\\MyMoneyApi.csproj",
       "projectName": "MyMoneyApi",
-      "projectPath": "D:\\Treinamento\\Android\\Api\\Projetos\\MyMoneyApi-.NET-Core\\MyMoneyApi\\MyMoneyApi\\MyMoneyApi.csproj",
-      "packagesPath": "C:\\Users\\mauricio\\.nuget\\packages\\",
-      "outputPath": "D:\\Treinamento\\Android\\Api\\Projetos\\MyMoneyApi-.NET-Core\\MyMoneyApi\\MyMoneyApi\\obj\\",
+      "projectPath": "C:\\Users\\mauri\\Estudos\\Treinamento\\Android\\Api\\Projetos\\MyMoneyApi-.NET-Core\\MyMoneyApi\\MyMoneyApi\\MyMoneyApi.csproj",
+      "packagesPath": "C:\\Users\\mauri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mauri\\Estudos\\Treinamento\\Android\\Api\\Projetos\\MyMoneyApi-.NET-Core\\MyMoneyApi\\MyMoneyApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mauricio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mauri\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
