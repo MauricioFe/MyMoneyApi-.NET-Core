@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyMoneyApi.Models;
 using MyMoneyApi.Repositorio;
@@ -28,6 +29,7 @@ namespace MyMoneyApi.Controllers
 
         // GET api/<TipoMovimentacaoController>/5
         [HttpGet("{id}", Name = "GetTipoMovimentacao")]
+        [Authorize]
         public IActionResult GetById(int id)
         {
             var tipoMovimentacao = _repo.Find(id);
