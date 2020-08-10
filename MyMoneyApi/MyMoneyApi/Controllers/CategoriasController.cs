@@ -9,6 +9,7 @@ using MyMoneyApi.Repositorio;
 
 namespace MyMoneyApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriasController : Controller
@@ -21,7 +22,6 @@ namespace MyMoneyApi.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public IEnumerable<Categoria> GetAll()
         {
             return _repo.GetAll();

@@ -9,6 +9,7 @@ using MyMoneyApi.Repositorio;
 
 namespace MyMoneyApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class TipoMovimentacaoController : Controller
