@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OMVUW6djibK1YQeDG0zGK3NONRZad3+iGZW1rNdav+ezoqFLPuYp/JU5V6kui7hFKqG4KRKBYs3+shud7sMz7g==",
+  "dgSpecHash": "Ju8jgZT+9VfcaCCYzGjE+VqHvtCguYA7HgShgW5419pml0odtvprrDTHwVdLbjj9qvNXPp6JL2OXwPilvGkfKw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mauri\\Estudos\\Treinamento\\Android\\Api\\Projetos\\MyMoneyApi-.NET-Core\\MyMoneyApi\\MyMoneyApi\\MyMoneyApi.csproj",
+  "projectFilePath": "C:\\Users\\mauri\\Estudos\\Treinamento\\Android\\Criação Api\\Projetos\\MyMoneyApi-.NET-Core\\MyMoneyApi\\MyMoneyApi\\MyMoneyApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mauri\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\mauri\\.nuget\\packages\\microsoft.aspnetcore\\2.1.1\\microsoft.aspnetcore.2.1.1.nupkg.sha512",
