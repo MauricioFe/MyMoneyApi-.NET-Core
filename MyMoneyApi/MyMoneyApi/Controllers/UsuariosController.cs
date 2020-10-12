@@ -58,7 +58,7 @@ namespace MyMoneyApi.Controllers
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody] Usuario usuario)
         {
-            if (usuario == null || id != usuario.Id)
+            if (usuario == null)
             {
                 return BadRequest();
             }
@@ -69,7 +69,7 @@ namespace MyMoneyApi.Controllers
             _usuario.Email = usuario.Email;
             _repo.Update(_usuario);
 
-            return new NoContentResult();
+            return CreatedAtRoute("GetUsuario", new { id = usuario.Id }, usuario);
         }
 
         // DELETE api/<UsuariosController>/5
@@ -81,7 +81,7 @@ namespace MyMoneyApi.Controllers
                 return NotFound();
 
             _repo.Remove(id);
-            return new NoContentResult();
+            return Ok(new { Mesage = "Exluído com sucesso" });
         }
 
         [HttpPost]
