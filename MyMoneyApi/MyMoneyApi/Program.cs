@@ -21,7 +21,7 @@ namespace MyMoneyApi
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            .UseUrls($"http://{Dns.GetHostEntry(Dns.GetHostName()).AddressList.First(ip => ip.AddressFamily == AddressFamily.InterNetwork)}:5000")
+            .UseUrls($"http://{Dns.GetHostEntry(Dns.GetHostName()).AddressList.First(ip => ip.AddressFamily == AddressFamily.InterNetwork)}:5001")
                 .UseStartup<Startup>();
     }
 }
